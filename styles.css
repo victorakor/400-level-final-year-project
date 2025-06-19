@@ -1,0 +1,200 @@
+/* Centralized styles.css for Surveillance System */
+
+body {
+  font-family: 'Open Sans', Arial, sans-serif;
+  margin: 0;
+  background-color: #ECF0F1;
+  color: #000;
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.hidden {
+  display: none;
+}
+
+button {
+  padding: 0.5rem 1rem;
+  font-size: 1rem;
+  background-color: #2C3E50;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background-color 0.2s;
+  display: inline-block;
+  width: auto;
+  max-width: fit-content;
+}
+
+button:hover {
+  background-color: #34495E;
+}
+
+input, select {
+  padding: 0.5rem;
+  font-size: 1rem;
+  border: 1px solid #BDC3C7;
+  border-radius: 4px;
+}
+
+header {
+  background-color: #FFFFFF;
+  color: #000000;
+  padding: 1rem;
+  font-size: 2rem;
+  text-align: center;
+  text-transform: uppercase;
+  z-index: 10;
+  width: calc(100% - 250px);
+  margin-left: 250px;
+  box-sizing: border-box;
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.main-content {
+  display: flex;
+  flex: 1;
+  min-height: 0;
+}
+
+.sidebar {
+  width: 250px;
+  background-color: #2C3E50;
+  color: white;
+  padding: 1rem;
+  position: fixed;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  height: 100vh;
+  overflow-y: auto;
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.sidebar a {
+  display: block;
+  padding: 0.5rem;
+  color: white;
+  text-decoration: none;
+  border-radius: 4px;
+}
+
+.sidebar a:hover, .sidebar a.active {
+  background-color: #34495E;
+}
+
+main {
+  flex: 1;
+  margin-left: 250px;
+  padding: 1.5rem;
+}
+
+.card {
+  background-color: #ECF0F1;
+  padding: 1rem;
+  border-radius: 10px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  margin-bottom: 1.5rem;
+  transition: background-color 0.3s ease;
+}
+
+.camera-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1rem;
+}
+
+.camera-feed {
+  background-color: #34495E;
+  color: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 200px;
+  border-radius: 10px;
+  font-size: 1.5rem;
+  transition: transform 0.3s ease, background-color 0.3s ease;
+}
+
+.camera-feed:hover {
+  transform: scale(1.02);
+}
+
+.alert {
+  padding: 0.5rem;
+  margin-bottom: 0.5rem;
+  border-radius: 4px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.alert.error {
+  background-color: #FADBD8;
+  color: #E74C3C;
+}
+
+.alert.warning {
+  background-color: #F9E79F;
+  color: #D4AC0D;
+}
+
+.acknowledge-btn { background-color: #2ECC71; }
+.verify-btn { background-color: #3498DB; }
+.dismiss-btn { background-color: #E74C3C; }
+
+.dark-mode-toggle {
+  margin-top: 1rem;
+}
+
+body.dark-mode {
+  background-color: #2C3E50;
+  color: #ECF0F1;
+}
+
+body.dark-mode header {
+  background-color: #34495E;
+  color: #ECF0F1;
+}
+
+body.dark-mode .card {
+  background-color: #34495E;
+}
+
+body.dark-mode .alert.error {
+  background-color: #6E2C00;
+  color: #FADBD8;
+}
+
+body.dark-mode .alert.warning {
+  background-color: #7D6608;
+  color: #F9E79F;
+}
+
+body.dark-mode .camera-feed {
+  background-color: #5D6D7E;
+}
+
+body.dark-mode .sidebar {
+  background-color: #1B2631;
+}
+
+@media (max-width: 768px) {
+  .sidebar {
+    position: relative;
+    width: 100%;
+  }
+  main {
+    margin-left: 0;
+  }
+  .camera-grid {
+    grid-template-columns: 1fr;
+  }
+  .camera-feed {
+    height: 200px;
+  }
+}
